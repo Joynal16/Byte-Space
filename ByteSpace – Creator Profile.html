@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ByteSpace – Creator Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white font-['Urbanist',ui-sans-serif,system-ui,sans-serif] text-slate-900 antialiased">
+
+<!-- HERO -->
+<header class="bg-[#2A33E6] bg-[linear-gradient(to_right,rgba(255,255,255,.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,.1)_1px,transparent_1px)] bg-[size:90px_90px] pt-[env(safe-area-inset-top,0px)] text-white">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-6">
+    <a href="#" class="flex items-center gap-1 text-lg font-bold"><span class="text-4xl font-black leading-none text-[#D7F634]">b</span>ByteSpace</a>
+    <ul class="hidden items-center gap-8 text-sm md:flex">
+      <a href="/index.html"><li class="font-bold">Home</li></a>
+      <a href="/Course-Details.html"><li class="text-white/80">Courses</li></a>
+      <a href="/ByteSpace – Creator Profile.html"><li class="text-white/80">Creators</li></a>
+    </ul>
+    <div class="flex items-center gap-5 text-sm">
+      <a href="/bytespace_auth_pages.html" class="hidden sm:inline">Sign In</a>
+      <a href="/bytespace_404_not_found_page.html" class="hidden sm:inline">Join Us</a>
+      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+    </div>
+  </nav>
+
+  <section class="mx-auto max-w-6xl px-4 pb-10 pt-16 md:pt-24">
+    <div class="flex items-center gap-5">
+      <div class="h-[72px] w-[72px] shrink-0 overflow-hidden rounded-xl bg-pink-300">
+        <svg viewBox="0 0 72 72" class="h-full w-full"><circle cx="36" cy="30" r="13" fill="#3b2a2a"/><path d="M8 72c2-20 14-26 28-26s26 6 28 26Z" fill="#1e293b"/></svg>
+      </div>
+      <div>
+        <div class="flex flex-wrap items-center gap-3">
+          <h1 class="text-2xl font-bold md:text-3xl">PurePearl Studio</h1>
+          <span class="rounded-full bg-[#D7F634] px-3 py-1 text-xs font-bold text-slate-900">Creator</span>
+        </div>
+        <p class="mt-1 text-sm">Passionate UI/UX, Web designer</p>
+      </div>
+    </div>
+
+    <p class="mt-10 text-sm leading-relaxed">Welcome to the creative world of [Creator's Name]. Here, you'll discover the passion, expertise, and inspiration that drive my creative journey. Let's explore and learn together!<br>Dive into my creative portfolio, showcasing a glimpse of my artistic endeavors. From digital designs to multimedia projects, each piece tells a unique story. Explore the world of creativity with me.</p>
+
+    <div class="mt-8 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex gap-3 text-sm">
+        <span class="rounded-full bg-white px-5 py-2 text-slate-900"><b class="font-bold">3</b> Products</span>
+        <span class="rounded-full bg-white px-5 py-2 text-slate-900"><b class="font-bold">12</b> Followers</span>
+      </div>
+      <button class="rounded-full bg-[#D7F634] px-7 py-2 text-sm font-bold text-slate-900 transition hover:brightness-95">Follow</button>
+    </div>
+  </section>
+</header>
+
+<!-- COURSES -->
+<main class="mx-auto max-w-6xl px-4 py-10">
+  <div class="flex flex-wrap items-center justify-between gap-3 text-xs">
+    <div class="flex gap-3">
+      <button class="flex items-center gap-2 rounded-lg border border-slate-200 px-4 py-2"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18l-7 8v6l-4-2v-4L3 5Z"/></svg>Filter</button>
+      <button class="flex items-center gap-2 rounded-lg border border-slate-200 px-4 py-2"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="14" width="4" height="6"/><rect x="10" y="9" width="4" height="11"/><rect x="16" y="4" width="4" height="16"/></svg>Level</button>
+      <button class="flex items-center gap-2 rounded-lg border border-slate-200 px-4 py-2"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg>Category</button>
+    </div>
+    <button class="flex items-center gap-2 rounded-lg border border-slate-200 px-4 py-2"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M7 12h10M10 17h4"/></svg>Most relevant</button>
+  </div>
+
+  <div id="grid" class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+</main>
+
+<!-- FOOTER -->
+<bytespace-footer></bytespace-footer>
+<script src="components/site-footer.js"></script>
+
+<script>
+const dots = Array.from({length: 18}, () => '<i class="h-4 w-4 rounded bg-slate-700/60"></i>').join('');
+const notes = ['bg-yellow-300','bg-pink-300','bg-orange-300','bg-lime-300','bg-yellow-200','bg-pink-200'].map(c => `<i class="h-5 w-5 ${c}"></i>`).join('');
+const courses = [
+  { t: 'Learn Figma from Basic', bg: 'bg-gradient-to-br from-amber-100 via-stone-200 to-stone-400', art: '<i class="h-20 w-20 rounded-full bg-stone-700/70"></i>' },
+  { t: 'Build Digital Asset', bg: 'bg-slate-200', art: `<div class="grid grid-cols-6 gap-3">${dots}</div>` },
+  { t: 'The Power of Big Data', bg: 'bg-slate-900', art: '<div class="flex h-20 items-end gap-2"><i class="h-8 w-3 bg-emerald-400"></i><i class="h-14 w-3 bg-sky-400"></i><i class="h-10 w-3 bg-emerald-400"></i><i class="h-20 w-3 bg-sky-400"></i><i class="h-12 w-3 bg-emerald-400"></i></div>' },
+  { t: 'Balancing Productivity and Life', bg: 'bg-gradient-to-b from-stone-800 to-stone-600', art: '<b class="rounded bg-white px-3 py-2 text-xs tracking-widest text-slate-900">DO MORE</b>' },
+  { t: 'Mastering Money Management', bg: 'bg-white', art: '<svg viewBox="0 0 120 60" class="h-24 w-full px-6"><polyline points="0,55 25,40 45,45 70,20 95,25 120,5" fill="none" stroke="#10b981" stroke-width="3"/></svg>' },
+  { t: 'From Idea to Startup Success', bg: 'bg-gradient-to-br from-stone-100 to-stone-300', art: `<div class="grid grid-cols-6 gap-2">${notes}</div>` },
+];
+const star = '<svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3Z"/></svg>';
+const bars = '<svg class="h-3 w-3" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="14" width="4" height="6"/><rect x="10" y="9" width="4" height="11"/><rect x="16" y="4" width="4" height="16" opacity=".3"/></svg>';
+const faces = ['bg-orange-300', 'bg-slate-700', 'bg-pink-300', 'bg-sky-300'].map(c => `<i class="-ml-2 h-6 w-6 rounded-full border-2 border-white first:ml-0 ${c}"></i>`).join('');
+document.getElementById('grid').innerHTML = courses.map(c => `
+  <article class="rounded-2xl border border-slate-200 p-3 transition hover:-translate-y-1 hover:shadow-lg">
+    <div class="relative flex h-40 items-center justify-center overflow-hidden rounded-xl ${c.bg}">
+      ${c.art}
+      <div class="absolute inset-x-2 bottom-2 flex justify-between gap-1 text-[10px]">
+        <span class="rounded-full border border-white/60 bg-white/70 px-2 py-0.5 backdrop-blur">17 Lessons</span>
+        <span class="rounded-full border border-white/60 bg-white/70 px-2 py-0.5 backdrop-blur">2 hours 16 mins</span>
+        <span class="rounded-full border border-white/60 bg-white/70 px-2 py-0.5 backdrop-blur">59 Comments</span>
+      </div>
+    </div>
+    <div class="mt-4 flex items-center justify-between gap-2">
+      <h3 class="truncate text-sm font-bold">${c.t}</h3>
+      <span class="flex shrink-0 items-center gap-1 text-xs text-slate-500">4.5 ${star}</span>
+    </div>
+    <p class="mt-0.5 text-[10px] text-slate-500">by <span class="text-[#2A33E6]">purepearl studio</span></p>
+    <div class="mt-3 flex items-center justify-between">
+      <span class="flex items-center gap-1.5 rounded-lg border border-slate-200 px-2.5 py-1 text-[10px]">${bars}Beginner</span>
+      <div class="flex items-center">${faces}<i class="-ml-2 grid h-6 w-6 place-items-center rounded-full border-2 border-white bg-[#D7F634] text-[8px] font-bold not-italic">20+</i></div>
+    </div>
+    <p class="mt-3 text-base font-extrabold text-[#2A33E6]">$25 <span class="text-[10px] font-normal text-slate-500">/lifetime</span></p>
+  </article>`).join('');
+</script>
+</body>
+</html>

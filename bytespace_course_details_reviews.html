@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteSpace - Build Digital Asset: A Comprehensive Guide</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#2554fb',
+                            darkBlue: '#1e44d1',
+                            lime: '#d0fd31',
+                            limeHover: '#beed1c',
+                            dark: '#0a0f1d'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .blue-grid-pattern {
+            background-color: #2554fb;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <div>
+        <!-- Blue Header Section -->
+        <header class="blue-grid-pattern text-white border-b border-blue-400/20">
+            <!-- Navigation Bar -->
+            <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-xl bg-brand-lime flex items-center justify-center font-extrabold text-slate-900 text-xl shadow-md">
+                        b
+                    </div>
+                    <span class="text-2xl font-extrabold tracking-tight text-white">ByteSpace</span>
+                </div>
+
+                <!-- Nav Links -->
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium text-blue-100">
+                    <a href="/index.html" class="hover:text-white transition-colors">Home</a>
+                    <a href="/Course-Details.html" class="text-white font-semibold underline underline-offset-8 decoration-brand-lime decoration-2">Courses</a>
+                    <a href="/ByteSpace – Creator Profile.html" class="hover:text-white transition-colors">Creators</a>
+                </div>
+
+                <!-- Right Utility Links -->
+                <div class="flex items-center gap-5 text-sm font-medium text-white">
+                    <a href="/bytespace_auth_pages.html" class="hover:text-blue-100 transition-colors">Sign In</a>
+                    <a href="/bytespace_404_not_found_page.html" class="hover:text-blue-100 transition-colors">Join Us</a>
+                    <button aria-label="Shopping Cart" class="w-9 h-9 rounded-full bg-blue-600/50 hover:bg-blue-600 flex items-center justify-center text-white text-sm border border-blue-400/30 transition-all">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Hero Title & Badges -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-28">
+                <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
+                    <div class="max-w-3xl">
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight mb-3">
+                            Build Digital Asset: A Comprehensive Guide
+                        </h1>
+                        <p class="text-blue-100 text-sm sm:text-base mb-4 font-normal">
+                            Unlock the Power of Digital Creation with Expert Guidance
+                        </p>
+                        <p class="text-xs text-blue-200 mb-6">
+                            by <a href="#" class="text-white font-medium underline underline-offset-2 decoration-blue-300">purepearl studio</a>
+                        </p>
+
+                        <!-- Hero Badges Row -->
+                        <div class="flex flex-wrap items-center gap-3">
+                            <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/15">
+                                <i class="fa-solid fa-chart-simple text-brand-lime text-xs"></i> Intermediate
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/15">
+                                <i class="fa-solid fa-star text-amber-300 text-xs"></i> 4.8 <span class="text-blue-200 font-normal">(272 reviews)</span>
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/15">
+                                <i class="fa-solid fa-user-group text-blue-200 text-xs"></i> 199 Students
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Share Button -->
+                    <div class="flex-shrink-0">
+                        <button class="bg-brand-lime hover:bg-brand-limeHover text-slate-900 font-bold text-xs px-5 py-2.5 rounded-full flex items-center gap-2 shadow-lg transition transform active:scale-95">
+                            <i class="fa-solid fa-share-nodes"></i> Share
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Area with Floating Sidebar Layout -->
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 mb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left Main Media Viewport -->
+                <div class="lg:col-span-7">
+                    <div class="relative bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-video group">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80" alt="Course Video Preview" class="w-full h-full object-cover opacity-90 group-hover:opacity-80 transition duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+                        
+                        <!-- Play Button Overlay -->
+                        <button aria-label="Play Video Preview" class="absolute inset-0 m-auto w-16 h-16 sm:w-20 sm:h-20 bg-white/90 backdrop-blur-md text-slate-900 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:bg-brand-lime transition duration-300">
+                            <i class="fa-solid fa-play text-xl sm:text-2xl ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Floating Course Card Sidebar -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-xl border border-gray-100">
+                        <!-- Lessons Header -->
+                        <h3 class="text-slate-900 font-extrabold text-lg mb-4 flex items-center justify-between">
+                            <span>12 Lessons <span class="text-xs font-medium text-slate-400">(2.4 hours)</span></span>
+                        </h3>
+
+                        <!-- Lessons List -->
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-gray-50 border border-gray-100 text-xs">
+                                <div class="flex items-center gap-2.5 text-slate-700 font-medium">
+                                    <i class="fa-regular fa-circle-play text-brand-blue text-sm"></i>
+                                    <span>01. Introduction to Digital Assets</span>
+                                </div>
+                                <span class="text-brand-blue font-semibold">12 mins</span>
+                            </div>
+
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-gray-50 border border-gray-100 text-xs">
+                                <div class="flex items-center gap-2.5 text-slate-700 font-medium">
+                                    <i class="fa-regular fa-circle-play text-brand-blue text-sm"></i>
+                                    <span>02. Design Principles for Projects</span>
+                                </div>
+                                <span class="text-brand-blue font-semibold">21 mins</span>
+                            </div>
+
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-gray-50 border border-gray-100 text-xs">
+                                <div class="flex items-center gap-2.5 text-slate-700 font-medium">
+                                    <i class="fa-regular fa-circle-play text-brand-blue text-sm"></i>
+                                    <span>03. Advanced Techniques in Digital Creation</span>
+                                </div>
+                                <span class="text-brand-blue font-semibold">15 mins</span>
+                            </div>
+
+                            <div class="text-center pt-1">
+                                <button class="text-xs font-semibold text-slate-400 hover:text-brand-blue transition">
+                                    + 9 more lessons
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Price Section & CTA -->
+                        <div class="mb-6">
+                            <p class="text-xs text-slate-400 mb-1">Ready to Dive In? Enroll Now and Start Building Your Digital Future!</p>
+                            <div class="flex items-baseline gap-1.5 mb-4">
+                                <span class="text-3xl font-extrabold text-brand-blue">$25</span>
+                                <span class="text-xs text-slate-400 font-medium">/ Lifetime</span>
+                            </div>
+                            <button class="w-full bg-brand-lime hover:bg-brand-limeHover text-slate-900 font-bold text-sm py-3.5 rounded-2xl shadow-md transition transform active:scale-98">
+                                Enroll Now
+                            </button>
+                        </div>
+
+                        <!-- Course Inclusions -->
+                        <div class="pt-5 border-t border-gray-100 mb-6">
+                            <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3">This course includes:</h4>
+                            <ul class="space-y-2.5 text-xs text-slate-600 font-medium">
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-regular fa-folder-open text-brand-blue text-sm w-4"></i>
+                                    <span>Learning Resources</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-laptop-code text-brand-blue text-sm w-4"></i>
+                                    <span>Quality Lesson Videos</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-award text-brand-blue text-sm w-4"></i>
+                                    <span>Certificate of Completion</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-regular fa-comments text-brand-blue text-sm w-4"></i>
+                                    <span>Private Consultation</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Author Mini Card Box -->
+                        <div class="p-4 rounded-2xl bg-gray-50 border border-gray-100">
+                            <div class="flex items-center gap-3 mb-2">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="PurePearl Studio" class="w-10 h-10 rounded-full object-cover ring-2 ring-white">
+                                <div>
+                                    <h5 class="text-xs font-bold text-slate-900">PurePearl Studio</h5>
+                                    <p class="text-[10px] text-slate-400">Professional Creator</p>
+                                </div>
+                            </div>
+                            <p class="text-[11px] text-slate-500 mb-3 leading-relaxed">
+                                Ready to Dive In? Enroll Now and Start Building Your Digital Future!
+                            </p>
+                            <button class="w-full bg-white hover:bg-gray-100 text-slate-700 text-xs font-semibold py-2 rounded-xl border border-gray-200 transition">
+                                See Full Profile
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Tab Navigation Section -->
+            <div class="mt-12 lg:-mt-10 lg:w-7/12">
+                <div class="flex items-center gap-2 border-b border-gray-200 pb-4 mb-8">
+                    <button class="px-5 py-2.5 rounded-full text-xs font-medium text-slate-500 hover:text-slate-900 transition">About</button>
+                    <button class="px-5 py-2.5 rounded-full text-xs font-medium text-slate-500 hover:text-slate-900 transition">Lesson</button>
+                    <button class="px-6 py-2.5 rounded-full text-xs font-bold bg-brand-lime text-slate-900 shadow-sm">Reviews</button>
+                </div>
+
+                <!-- What Learners Are Saying -->
+                <div class="mb-10">
+                    <h2 class="text-xl font-extrabold text-slate-900 mb-2">What Learners Are Saying</h2>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-6">
+                        Discover what our learners have to say about their experience with "Build Digital Asset: A Comprehensive Guide". Read reviews and ratings from individuals who have embarked on this transformative journey of mastering digital asset creation.
+                    </p>
+
+                    <!-- Overall Rating Card -->
+                    <div class="bg-gray-50 border border-gray-200/80 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-6">
+                        <!-- Rating Box -->
+                        <div class="bg-brand-lime rounded-2xl p-6 flex flex-col items-center justify-center min-w-[140px] text-center shadow-sm">
+                            <span class="text-[10px] font-bold text-slate-700 uppercase tracking-wider mb-1">Rating</span>
+                            <span class="text-4xl font-extrabold text-slate-900">4.7</span>
+                        </div>
+
+                        <!-- Progress Bars Breakdown -->
+                        <div class="w-full space-y-2">
+                            <!-- 5 Star -->
+                            <div class="flex items-center gap-3 text-xs">
+                                <div class="flex items-center gap-0.5 text-slate-800 text-[10px] w-16 justify-end">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="flex-1 bg-gray-200 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-brand-lime h-full rounded-full" style="width: 85%;"></div>
+                                </div>
+                                <span class="text-slate-400 text-[11px] w-8 text-right font-medium">120</span>
+                            </div>
+
+                            <!-- 4 Star -->
+                            <div class="flex items-center gap-3 text-xs">
+                                <div class="flex items-center gap-0.5 text-slate-800 text-[10px] w-16 justify-end">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star text-slate-400"></i>
+                                </div>
+                                <div class="flex-1 bg-gray-200 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-brand-lime h-full rounded-full" style="width: 65%;"></div>
+                                </div>
+                                <span class="text-slate-400 text-[11px] w-8 text-right font-medium">120</span>
+                            </div>
+
+                            <!-- 3 Star -->
+                            <div class="flex items-center gap-3 text-xs">
+                                <div class="flex items-center gap-0.5 text-slate-800 text-[10px] w-16 justify-end">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star text-slate-400"></i><i class="fa-regular fa-star text-slate-400"></i>
+                                </div>
+                                <div class="flex-1 bg-gray-200 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-brand-lime h-full rounded-full" style="width: 15%;"></div>
+                                </div>
+                                <span class="text-slate-400 text-[11px] w-8 text-right font-medium">3</span>
+                            </div>
+
+                            <!-- 2 Star -->
+                            <div class="flex items-center gap-3 text-xs">
+                                <div class="flex items-center gap-0.5 text-slate-800 text-[10px] w-16 justify-end">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star text-slate-400"></i><i class="fa-regular fa-star text-slate-400"></i><i class="fa-regular fa-star text-slate-400"></i>
+                                </div>
+                                <div class="flex-1 bg-gray-200 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-brand-lime h-full rounded-full" style="width: 8%;"></div>
+                                </div>
+                                <span class="text-slate-400 text-[11px] w-8 text-right font-medium">2</span>
+                            </div>
+
+                            <!-- 1 Star -->
+                            <div class="flex items-center gap-3 text-xs">
+                                <div class="flex items-center gap-0.5 text-slate-800 text-[10px] w-16 justify-end">
+                                    <i class="fa-solid fa-star"></i><i class="fa-regular fa-star text-slate-400"></i><i class="fa-regular fa-star text-slate-400"></i><i class="fa-regular fa-star text-slate-400"></i><i class="fa-regular fa-star text-slate-400"></i>
+                                </div>
+                                <div class="flex-1 bg-gray-200 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-brand-lime h-full rounded-full" style="width: 4%;"></div>
+                                </div>
+                                <span class="text-slate-400 text-[11px] w-8 text-right font-medium">10</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Individual Reviews List -->
+                <div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-4">Individual Reviews:</h3>
+
+                    <!-- Filter Pills -->
+                    <div class="flex items-center gap-2 overflow-x-auto hide-scrollbar mb-6">
+                        <button class="bg-brand-lime text-slate-900 font-bold px-4 py-1.5 rounded-full text-xs shadow-sm whitespace-nowrap">All Rating</button>
+                        <button class="bg-gray-100 hover:bg-gray-200 text-slate-600 font-medium px-4 py-1.5 rounded-full text-xs flex items-center gap-1 transition whitespace-nowrap"><i class="fa-solid fa-star text-[10px]"></i> 5</button>
+                        <button class="bg-gray-100 hover:bg-gray-200 text-slate-600 font-medium px-4 py-1.5 rounded-full text-xs flex items-center gap-1 transition whitespace-nowrap"><i class="fa-solid fa-star text-[10px]"></i> 4</button>
+                        <button class="bg-gray-100 hover:bg-gray-200 text-slate-600 font-medium px-4 py-1.5 rounded-full text-xs flex items-center gap-1 transition whitespace-nowrap"><i class="fa-solid fa-star text-[10px]"></i> 3</button>
+                        <button class="bg-gray-100 hover:bg-gray-200 text-slate-600 font-medium px-4 py-1.5 rounded-full text-xs flex items-center gap-1 transition whitespace-nowrap"><i class="fa-solid fa-star text-[10px]"></i> 2</button>
+                        <button class="bg-gray-100 hover:bg-gray-200 text-slate-600 font-medium px-4 py-1.5 rounded-full text-xs flex items-center gap-1 transition whitespace-nowrap"><i class="fa-solid fa-star text-[10px]"></i> 1</button>
+                    </div>
+
+                    <!-- Reviews Stack -->
+                    <div class="space-y-4">
+
+                        <!-- Review Card 1 -->
+                        <div class="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="PurePearl Studio" class="w-9 h-9 rounded-full object-cover">
+                                    <div>
+                                        <h4 class="text-xs font-bold text-slate-900">PurePearl Studio</h4>
+                                        <p class="text-[10px] text-slate-400">UI/UX Designer</p>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] text-slate-400">1 year ago</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-amber-400 text-xs mb-3">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                                "This course provides me with a comprehensive understanding of digital asset creation. The lessons were in-depth, practical and immediately applicable to my work. Highly recommended!"
+                            </p>
+                        </div>
+
+                        <!-- Review Card 2 -->
+                        <div class="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Albert Flores" class="w-9 h-9 rounded-full object-cover">
+                                    <div>
+                                        <h4 class="text-xs font-bold text-slate-900">Albert Flores</h4>
+                                        <p class="text-[10px] text-slate-400">UI/UX Designer</p>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] text-slate-400">1 year ago</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-amber-400 text-xs mb-3">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                                "The course transformed my approach to digital design. The combination of theory, hands-on exercises and real-world application made it a truly enriching experience. Thrilled to implement what I've learned!"
+                            </p>
+                        </div>
+
+                        <!-- Review Card 3 -->
+                        <div class="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Cody Fisher" class="w-9 h-9 rounded-full object-cover">
+                                    <div>
+                                        <h4 class="text-xs font-bold text-slate-900">Cody Fisher</h4>
+                                        <p class="text-[10px] text-slate-400">UI/UX Designer</p>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] text-slate-400">1 year ago</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-amber-400 text-xs mb-3">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                                "The project showcase and critique sessions created a collaborative environment where I could showcase my work, receive valuable feedback, and refine my skills. It added a unique and valuable dimension to the learning process."
+                            </p>
+                        </div>
+
+                        <!-- Review Card 4 -->
+                        <div class="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Brooklyn Simmons" class="w-9 h-9 rounded-full object-cover">
+                                    <div>
+                                        <h4 class="text-xs font-bold text-slate-900">Brooklyn Simmons</h4>
+                                        <p class="text-[10px] text-slate-400">UI/UX Designer</p>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] text-slate-400">1 year ago</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-amber-400 text-xs mb-3">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                                "The insights on optimizing digital assets for various platforms were particularly insightful. The course adapted to the evolving digital landscape, and the engaging content kept me motivated throughout."
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+   <!-- FOOTER -->
+<bytespace-footer spaced></bytespace-footer>
+<script src="components/site-footer.js"></script>
+
+
+</body>
+</html>

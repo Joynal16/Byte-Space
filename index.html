@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteSpace - Get Access to Hundreds Courses Available</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#2547eb',
+                            darkBlue: '#1b36be',
+                            lime: '#ccf52b',
+                            limeHover: '#b8e01d',
+                            dark: '#0e1726'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-pattern {
+            background-color: #2547eb;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+            background-size: 26px 26px;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glow-lime {
+            box-shadow: 0 0 80px rgba(204, 245, 43, 0.45);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800 font-sans antialiased selection:bg-brand-lime selection:text-slate-900 overflow-x-hidden">
+
+    <!-- HERO SECTION -->
+    <header class="hero-pattern text-white relative overflow-hidden pb-16 lg:pb-24">
+        <!-- Decorative Floating 3D Elements -->
+        <div class="absolute top-12 left-6 md:left-16 w-16 h-16 border-8 border-brand-lime rounded-full opacity-80 rotate-12 pointer-events-none animate-pulse"></div>
+        <div class="absolute top-36 left-4 md:left-24 text-brand-lime opacity-80 text-4xl pointer-events-none">
+            <i class="fa-solid fa-bolt"></i>
+        </div>
+        <div class="absolute top-20 right-8 md:right-20 w-16 h-16 bg-brand-lime rounded-2xl transform rotate-45 opacity-90 pointer-events-none hidden sm:block"></div>
+        <div class="absolute bottom-10 left-12 w-12 h-12 border-4 border-white rounded-full opacity-30 pointer-events-none"></div>
+
+        <!-- Navigation Bar -->
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between relative z-20">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-9 h-9 rounded-xl bg-brand-lime flex items-center justify-center font-extrabold text-brand-dark text-2xl shadow-lg transition-transform group-hover:scale-105">
+                    b
+                </div>
+                <span class="text-2xl font-extrabold tracking-tight text-white">ByteSpace</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-blue-100">
+                <a href="/index.html" class="text-white underline underline-offset-8 decoration-brand-lime decoration-2">Home</a>
+                <a href="/Course-Details.html" class="hover:text-white transition">Courses</a>
+                <a href="/ByteSpace – Creator Profile.html" class="hover:text-white transition">Creators</a>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-4">
+                <a href="/bytespace_auth_pages.html" class="text-sm font-semibold text-white hover:text-blue-100 transition hidden sm:inline-block">Sign In</a>
+                <a href="/bytespace_404_not_found_page.html" class="bg-blue-600/60 hover:bg-blue-600 text-white text-xs font-bold px-5 py-2.5 rounded-full border border-blue-400/40 backdrop-blur-sm transition-all shadow-sm">
+                    Join Us
+                </a>
+                <button aria-label="Shopping Cart" class="w-9 h-9 rounded-full bg-blue-600/50 hover:bg-blue-600 flex items-center justify-center text-white text-sm border border-blue-400/30 transition-all relative">
+                    <i class="fa-solid fa-bag-shopping text-xs"></i>
+                    <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-brand-lime rounded-full"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Hero Body -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 lg:pt-14 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                    Get Access to Hundreds <br class="hidden sm:block"/>
+                    Courses Available
+                </h1>
+                <p class="text-blue-100 text-sm sm:text-base max-w-xl mx-auto font-normal opacity-90 mb-8">
+                    Discover high-impact courses, learn from top creators, and master the skills you need to elevate your career today.
+                </p>
+
+                <!-- Search Input Bar -->
+                <div class="max-w-xl mx-auto bg-white p-2 rounded-full shadow-2xl flex items-center gap-2">
+                    <div class="pl-4 text-slate-400">
+                        <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                    </div>
+                    <input type="text" placeholder="Search for courses, skills, or creators..." class="w-full bg-transparent text-slate-800 placeholder-slate-400 text-xs sm:text-sm focus:outline-none px-2">
+                    <button class="bg-brand-lime hover:bg-brand-limeHover text-slate-900 font-extrabold text-xs sm:text-sm px-6 py-3 rounded-full flex items-center gap-2 whitespace-nowrap transition-colors shadow-md">
+                        <span>Search</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Hero Main Visual Banner with Glowing Lime Arc -->
+            <div class="relative max-w-4xl mx-auto mt-12">
+                <!-- Glowing Backdrop Oval -->
+                <div class="absolute inset-x-12 bottom-0 top-12 bg-brand-lime/80 rounded-t-full glow-lime -z-0"></div>
+
+                <!-- Central Student Image with Floating UI Badges -->
+                <div class="relative z-10 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Student wearing headphones" class="h-80 sm:h-96 md:h-[420px] object-cover rounded-t-full border-4 border-white/20 shadow-2xl">
+
+                    <!-- Badge 1: Success Rate Badge -->
+                    <div class="absolute top-12 right-4 sm:right-16 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3 border border-gray-100 animate-bounce">
+                        <div class="w-10 h-10 rounded-xl bg-brand-lime flex items-center justify-center font-bold text-slate-900 text-sm">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-900">95% Success</p>
+                            <p class="text-[10px] text-slate-500 font-medium">Course Completion Rate</p>
+                        </div>
+                    </div>
+
+                    <!-- Badge 2: Floating Student Reviews Badge -->
+                    <div class="absolute bottom-10 left-4 sm:left-12 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl flex items-center gap-3 border border-gray-100">
+                        <div class="flex -space-x-2">
+                            <img class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Student">
+                            <img class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Student">
+                            <img class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Student">
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-1 text-amber-400 text-xs">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-[10px] font-bold text-slate-800">4.9/5 (12k Reviews)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- TRUSTED SPONSOR LOGOS BAR -->
+    <section class="bg-white border-b border-gray-200/80 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-xs font-bold uppercase tracking-wider text-slate-400 mb-6">Trusted by leading teams worldwide</p>
+            <div class="flex flex-wrap items-center justify-center md:justify-between gap-8 opacity-60 grayscale hover:grayscale-0 transition-all">
+                <div class="flex items-center gap-2 text-slate-700 font-extrabold text-lg"><i class="fa-solid fa-cube text-brand-blue"></i> LogoIpsum</div>
+                <div class="flex items-center gap-2 text-slate-700 font-extrabold text-lg"><i class="fa-solid fa-shapes text-brand-blue"></i> LogoIpsum</div>
+                <div class="flex items-center gap-2 text-slate-700 font-extrabold text-lg"><i class="fa-solid fa-[#718096] fa-atom text-brand-blue"></i> LogoIpsum</div>
+                <div class="flex items-center gap-2 text-slate-700 font-extrabold text-lg"><i class="fa-solid fa-feather-pointed text-brand-blue"></i> LogoIpsum</div>
+                <div class="flex items-center gap-2 text-slate-700 font-extrabold text-lg"><i class="fa-solid fa-infinity text-brand-blue"></i> LogoIpsum</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DISCOVER YOUR PASSION / COURSE CATALOG GRID -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+                Discover Your Passion,<br/>Build Your Skills
+            </h2>
+            <p class="text-slate-500 text-sm">Explore our highest rated online courses across design, technology, and business.</p>
+        </div>
+
+        <!-- Filter Tags Bar -->
+        <div class="flex items-center justify-center gap-2 overflow-x-auto hide-scrollbar pb-6 mb-8">
+            <button class="bg-brand-lime text-slate-900 font-extrabold px-5 py-2 rounded-full text-xs whitespace-nowrap shadow-sm">
+                Featured
+            </button>
+            <button class="bg-gray-100 hover:bg-gray-200 text-slate-600 font-medium px-5 py-2 rounded-full text-xs whitespace-nowrap transition">
+                Music
+            </button>
+            <button class="bg-gray-100 hover:bg-gray-200 text-slate-600 font-medium px-5 py-2 rounded-full text-xs whitespace-nowrap transition">
+                Drawing & Painting
+            </button>
+            <button class="bg-gray-100 hover:bg-gray-200 text-slate-600 font-medium px-5 py-2 rounded-full text-xs whitespace-nowrap transition">
+                Marketing
+            </button>
+            <button class="bg-gray-100 hover:bg-gray-200 text-slate-600 font-medium px-5 py-2 rounded-full text-xs whitespace-nowrap transition">
+                Animation
+            </button>
+            <button class="bg-gray-100 hover:bg-gray-200 text-slate-600 font-medium px-5 py-2 rounded-full text-xs whitespace-nowrap transition">
+                Social Media
+            </button>
+            <button class="bg-gray-100 hover:bg-gray-200 text-slate-600 font-medium px-5 py-2 rounded-full text-xs whitespace-nowrap transition">
+                UI/UX Design
+            </button>
+            <button class="bg-gray-100 hover:bg-gray-200 text-slate-600 font-medium px-5 py-2 rounded-full text-xs whitespace-nowrap transition">
+                Creative Writing
+            </button>
+            <button class="bg-gray-100 hover:bg-gray-200 text-slate-600 font-medium px-5 py-2 rounded-full text-xs whitespace-nowrap transition">
+                Coding
+            </button>
+        </div>
+
+        <!-- Course Cards Grid (2 rows x 3 columns) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Card 1 -->
+            <div class="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group flex flex-col justify-between">
+                <div>
+                    <div class="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=600&q=80" alt="Learn Figma" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute bottom-3 left-3 right-3 flex items-center gap-1.5 flex-wrap">
+                            <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-medium px-2.5 py-1 rounded-full"><i class="fa-regular fa-file-lines text-gray-300 mr-1"></i> 17 Lessons</span>
+                            <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-medium px-2.5 py-1 rounded-full"><i class="fa-regular fa-clock text-gray-300 mr-1"></i> 2 Hours 16 Mins</span>
+                            <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-medium px-2.5 py-1 rounded-full"><i class="fa-regular fa-comment text-gray-300 mr-1"></i> 59 Comments</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-start justify-between gap-2 mb-1">
+                            <h3 class="font-bold text-slate-900 text-base group-hover:text-brand-blue transition-colors line-clamp-1">Learn Figma from Basic</h3>
+                            <div class="flex items-center gap-1 text-xs font-bold text-slate-800">
+                                <span>4.5</span>
+                                <i class="fa-solid fa-star text-amber-400 text-[10px]"></i>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-4">by <span class="text-slate-600 font-medium">purepearl studio</span></p>
+
+                        <div class="flex items-center justify-between pt-2">
+                            <span class="inline-flex items-center gap-1 bg-gray-100 text-slate-700 text-[11px] font-semibold px-2.5 py-1 rounded-md">
+                                <i class="fa-solid fa-pen-nib text-[9px]"></i> Beginner
+                            </span>
+                            <div class="flex items-center">
+                                <div class="flex -space-x-2 overflow-hidden">
+                                    <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="">
+                                    <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="">
+                                </div>
+                                <span class="ml-1.5 bg-brand-lime text-slate-900 font-extrabold text-[10px] px-1.5 py-0.5 rounded-full">+26k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-5 pb-5 pt-2 flex items-center justify-between border-t border-gray-50">
+                    <div>
+                        <span class="text-lg font-extrabold text-brand-blue">$25</span>
+                        <span class="text-xs text-slate-400 font-medium">/ Lifetime</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group flex flex-col justify-between">
+                <div>
+                    <div class="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" alt="Build Digital Asset" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute bottom-3 left-3 right-3 flex items-center gap-1.5 flex-wrap">
+                            <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-medium px-2.5 py-1 rounded-full"><i class="fa-regular fa-file-lines text-gray-300 mr-1"></i> 17 Lessons</span>
+                            <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-medium px-2.5 py-1 rounded-full"><i class="fa-regular fa-clock text-gray-300 mr-1"></i> 2 Hours 16 Mins</span>
+                            <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-medium px-2.5 py-1 rounded-full"><i class="fa-regular fa-comment text-gray-300 mr-1"></i> 59 Comments</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-start justify-between gap-2 mb-1">
+                            <h3 class="font-bold text-slate-900 text-base group-hover:text-brand-blue transition-colors line-clamp-1">Build Digital Asset</h3>
+                            <div class="flex items-center gap-1 text-xs font-bold text-slate-800">
+                                <span>4.5</span>
+                                <i class="fa-solid fa-star text-amber-400 text-[10px]"></i>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-4">by <span class="text-slate-600 font-medium">purepearl studio</span></p>
+
+                        <div class="flex items-center justify-between pt-2">
+                            <span class="inline-flex items-center gap-1 bg-gray-100 text-slate-700 text-[11px] font-semibold px-2.5 py-1 rounded-md">
+                                <i class="fa-solid fa-laptop-code text-[9px]"></i> Beginner
+                            </span>
+                            <div class="flex items-center">
+                                <div class="flex -space-x-2 overflow-hidden">
+                                    <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="">
+                                    <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80" alt="">
+                                </div>
+                                <span class="ml-1.5 bg-brand-lime text-slate-900 font-extrabold text-[10px] px-1.5 py-0.5 rounded-full">+26k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-5 pb-5 pt-2 flex items-center justify-between border-t border-gray-50">
+                    <div>
+                        <span class="text-lg font-extrabold text-brand-blue">$25</span>
+                        <span class="text-xs text-slate-400 font-medium">/ Lifetime</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group flex flex-col justify-between">
+                <div>
+                    <div class="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Big Data" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute bottom-3 left-3 right-3 flex items-center gap-1.5 flex-wrap">
+                            <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-medium px-2.5 py-1 rounded-full"><i class="fa-regular fa-file-lines text-gray-300 mr-1"></i> 17 Lessons</span>
+                            <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-medium px-2.5 py-1 rounded-full"><i class="fa-regular fa-clock text-gray-300 mr-1"></i> 2 Hours 16 Mins</span>
+                            <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-medium px-2.5 py-1 rounded-full"><i class="fa-regular fa-comment text-gray-300 mr-1"></i> 59 Comments</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-start justify-between gap-2 mb-1">
+                            <h3 class="font-bold text-slate-900 text-base group-hover:text-brand-blue transition-colors line-clamp-1">The Power of Big Data</h3>
+                            <div class="flex items-center gap-1 text-xs font-bold text-slate-800">
+                                <span>4.5</span>
+                                <i class="fa-solid fa-star text-amber-400 text-[10px]"></i>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-4">by <span class="text-slate-600 font-medium">purepearl studio</span></p>
+
+                        <div class="flex items-center justify-between pt-2">
+                            <span class="inline-flex items-center gap-1 bg-gray-100 text-slate-700 text-[11px] font-semibold px-2.5 py-1 rounded-md">
+                                <i class="fa-solid fa-chart-line text-[9px]"></i> Beginner
+                            </span>
+                            <div class="flex items-center">
+                                <div class="flex -space-x-2 overflow-hidden">
+                                    <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" alt="">
+                                    <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt="">
+                                </div>
+                                <span class="ml-1.5 bg-brand-lime text-slate-900 font-extrabold text-[10px] px-1.5 py-0.5 rounded-full">+26k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-5 pb-5 pt-2 flex items-center justify-between border-t border-gray-50">
+                    <div>
+                        <span class="text-lg font-extrabold text-brand-blue">$25</span>
+                        <span class="text-xs text-slate-400 font-medium">/ Lifetime</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group flex flex-col justify-between">
+                <div>
+                    <div class="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Productivity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute bottom-3 left-3 right-3 flex items-center gap-1.5 flex-wrap">
+                            <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-medium px-2.5 py-1 rounded-full"><i class="fa-regular fa-file-lines text-gray-300 mr-1"></i> 17 Lessons</span>
+                            <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-medium px-2.5 py-1 rounded-full"><i class="fa-regular fa-clock text-gray-300 mr-1"></i> 2 Hours 16 Mins</span>
+                            <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-medium px-2.5 py-1 rounded-full"><i class="fa-regular fa-comment text-gray-300 mr-1"></i> 59 Comments</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-start justify-between gap-2 mb-1">
+                            <h3 class="font-bold text-slate-900 text-base group-hover:text-brand-blue transition-colors line-clamp-1">Balancing Productivity...</h3>
+                            <div class="flex items-center gap-1 text-xs font-bold text-slate-800">
+                                <span>4.5</span>
+                                <i class="fa-solid fa-star text-amber-400 text-[10px]"></i>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-4">by <span class="text-slate-600 font-medium">purepearl studio</span></p>
+
+                        <div class="flex items-center justify-between pt-2">
+                            <span class="inline-flex items-center gap-1 bg-gray-100 text-slate-700 text-[11px] font-semibold px-2.5 py-1 rounded-md">
+                                <i class="fa-solid fa-sliders text-[9px]"></i> Beginner
+                            </span>
+                            <div class="flex items-center">
+                                <div class="flex -space-x-2 overflow-hidden">
+                                    <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="">
+                                    <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="">
+                                </div>
+                                <span class="ml-1.5 bg-brand-lime text-slate-900 font-extrabold text-[10px] px-1.5 py-0.5 rounded-full">+26k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-5 pb-5 pt-2 flex items-center justify-between border-t border-gray-50">
+                    <div>
+                        <span class="text-lg font-extrabold text-brand-blue">$25</span>
+                        <span class="text-xs text-slate-400 font-medium">/ Lifetime</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group flex flex-col justify-between">
+                <div>
+                    <div class="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" alt="Money Management" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute bottom-3 left-3 right-3 flex items-center gap-1.5 flex-wrap">
+                            <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-medium px-2.5 py-1 rounded-full"><i class="fa-regular fa-file-lines text-gray-300 mr-1"></i> 17 Lessons</span>
+                            <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-medium px-2.5 py-1 rounded-full"><i class="fa-regular fa-clock text-gray-300 mr-1"></i> 2 Hours 16 Mins</span>
+                            <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-medium px-2.5 py-1 rounded-full"><i class="fa-regular fa-comment text-gray-300 mr-1"></i> 59 Comments</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-start justify-between gap-2 mb-1">
+                            <h3 class="font-bold text-slate-900 text-base group-hover:text-brand-blue transition-colors line-clamp-1">Mastering Money Manage...</h3>
+                            <div class="flex items-center gap-1 text-xs font-bold text-slate-800">
+                                <span>4.5</span>
+                                <i class="fa-solid fa-star text-amber-400 text-[10px]"></i>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-4">by <span class="text-slate-600 font-medium">purepearl studio</span></p>
+
+                        <div class="flex items-center justify-between pt-2">
+                            <span class="inline-flex items-center gap-1 bg-gray-100 text-slate-700 text-[11px] font-semibold px-2.5 py-1 rounded-md">
+                                <i class="fa-solid fa-coins text-[9px]"></i> Beginner
+                            </span>
+                            <div class="flex items-center">
+                                <div class="flex -space-x-2 overflow-hidden">
+                                    <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="">
+                                    <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80" alt="">
+                                </div>
+                                <span class="ml-1.5 bg-brand-lime text-slate-900 font-extrabold text-[10px] px-1.5 py-0.5 rounded-full">+26k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-5 pb-5 pt-2 flex items-center justify-between border-t border-gray-50">
+                    <div>
+                        <span class="text-lg font-extrabold text-brand-blue">$25</span>
+                        <span class="text-xs text-slate-400 font-medium">/ Lifetime</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group flex flex-col justify-between">
+                <div>
+                    <div class="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Startup Success" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute bottom-3 left-3 right-3 flex items-center gap-1.5 flex-wrap">
+                            <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-medium px-2.5 py-1 rounded-full"><i class="fa-regular fa-file-lines text-gray-300 mr-1"></i> 17 Lessons</span>
+                            <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-medium px-2.5 py-1 rounded-full"><i class="fa-regular fa-clock text-gray-300 mr-1"></i> 2 Hours 16 Mins</span>
+                            <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-medium px-2.5 py-1 rounded-full"><i class="fa-regular fa-comment text-gray-300 mr-1"></i> 59 Comments</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-start justify-between gap-2 mb-1">
+                            <h3 class="font-bold text-slate-900 text-base group-hover:text-brand-blue transition-colors line-clamp-1">From Idea to Startup Succ...</h3>
+                            <div class="flex items-center gap-1 text-xs font-bold text-slate-800">
+                                <span>4.5</span>
+                                <i class="fa-solid fa-star text-amber-400 text-[10px]"></i>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-4">by <span class="text-slate-600 font-medium">purepearl studio</span></p>
+
+                        <div class="flex items-center justify-between pt-2">
+                            <span class="inline-flex items-center gap-1 bg-gray-100 text-slate-700 text-[11px] font-semibold px-2.5 py-1 rounded-md">
+                                <i class="fa-solid fa-rocket text-[9px]"></i> Beginner
+                            </span>
+                            <div class="flex items-center">
+                                <div class="flex -space-x-2 overflow-hidden">
+                                    <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" alt="">
+                                    <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt="">
+                                </div>
+                                <span class="ml-1.5 bg-brand-lime text-slate-900 font-extrabold text-[10px] px-1.5 py-0.5 rounded-full">+26k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-5 pb-5 pt-2 flex items-center justify-between border-t border-gray-50">
+                    <div>
+                        <span class="text-lg font-extrabold text-brand-blue">$25</span>
+                        <span class="text-xs text-slate-400 font-medium">/ Lifetime</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CATEGORY ICONS ROW -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+            <a href="#" class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition text-center flex flex-col items-center gap-3 group">
+                <div class="w-12 h-12 rounded-full bg-brand-lime flex items-center justify-center text-slate-900 text-lg group-hover:scale-110 transition">
+                    <i class="fa-solid fa-pen-nib"></i>
+                </div>
+                <span class="text-xs font-bold text-slate-800">Design</span>
+            </a>
+            <a href="#" class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition text-center flex flex-col items-center gap-3 group">
+                <div class="w-12 h-12 rounded-full bg-brand-lime flex items-center justify-center text-slate-900 text-lg group-hover:scale-110 transition">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <span class="text-xs font-bold text-slate-800">Development</span>
+            </a>
+            <a href="#" class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition text-center flex flex-col items-center gap-3 group">
+                <div class="w-12 h-12 rounded-full bg-brand-lime flex items-center justify-center text-slate-900 text-lg group-hover:scale-110 transition">
+                    <i class="fa-solid fa-laptop text-slate-900"></i>
+                </div>
+                <span class="text-xs font-bold text-slate-800">IT & Software</span>
+            </a>
+            <a href="#" class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition text-center flex flex-col items-center gap-3 group">
+                <div class="w-12 h-12 rounded-full bg-brand-lime flex items-center justify-center text-slate-900 text-lg group-hover:scale-110 transition">
+                    <i class="fa-solid fa-bullhorn"></i>
+                </div>
+                <span class="text-xs font-bold text-slate-800">Marketing</span>
+            </a>
+            <a href="#" class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition text-center flex flex-col items-center gap-3 group col-span-2 sm:col-span-1">
+                <div class="w-12 h-12 rounded-full bg-brand-lime flex items-center justify-center text-slate-900 text-lg group-hover:scale-110 transition">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+                <span class="text-xs font-bold text-slate-800">Photography</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- YOUR PATH TO PROFESSIONAL GROWTH SECTION -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Info Content -->
+            <div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+                    Your Path to Professional<br/>Growth Starts Here!
+                </h2>
+                <p class="text-slate-500 text-sm leading-relaxed mb-8">
+                    Gain practical skills with top-rated online courses taught by industry creators. Whether you're upgrading your career or exploring new passions, ByteSpace provides all the tools you need to succeed.
+                </p>
+
+                <!-- Counter Stats Grid -->
+                <div class="grid grid-cols-3 gap-6 pt-4 border-t border-gray-200">
+                    <div>
+                        <p class="text-3xl font-extrabold text-brand-blue">12K+</p>
+                        <p class="text-xs text-slate-400 font-medium mt-1">Active Students</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-extrabold text-brand-blue">70+</p>
+                        <p class="text-xs text-slate-400 font-medium mt-1">Expert Tutors</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-extrabold text-brand-blue">10+</p>
+                        <p class="text-xs text-slate-400 font-medium mt-1">Categories</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Image Banner with Lime Glow -->
+            <div class="relative flex justify-center lg:justify-end">
+                <div class="relative max-w-md w-full">
+                    <!-- Lime Backdrop Glow -->
+                    <div class="absolute -inset-4 bg-brand-lime/50 rounded-3xl blur-2xl -z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Students learning" class="w-full rounded-3xl shadow-2xl object-cover">
+                    <!-- Overlay Success Pill Badge -->
+                    <div class="absolute -bottom-6 left-6 bg-white p-3.5 rounded-2xl shadow-xl flex items-center gap-3 border border-gray-100">
+                        <div class="w-10 h-10 rounded-xl bg-brand-lime flex items-center justify-center font-bold text-slate-900">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-900">Certified Tutors</p>
+                            <p class="text-[10px] text-slate-500">100% Practical Learning</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CREATE & MANAGE COURSES EASILY SECTION -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Image with floating cards -->
+            <div class="relative flex justify-center lg:justify-start order-2 lg:order-1">
+                <div class="relative max-w-md w-full">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Instructor" class="w-full rounded-3xl shadow-2xl object-cover">
+                    <div class="absolute top-6 -left-6 bg-brand-blue text-white p-3.5 rounded-2xl shadow-xl flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-brand-lime text-slate-900 flex items-center justify-center font-bold text-xs">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold">4K HD Videos</p>
+                            <p class="text-[10px] text-blue-200">Crystal Clear Content</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Content -->
+            <div class="order-1 lg:order-2">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+                    Create & Manage<br/>Courses Easily.
+                </h2>
+                <p class="text-slate-500 text-sm leading-relaxed mb-8">
+                    Empower your knowledge sharing. We provide full creator tools, automated analytics, and community management so you can focus on building great content.
+                </p>
+
+                <ul class="space-y-4 text-sm font-semibold text-slate-800">
+                    <li class="flex items-center gap-3">
+                        <div class="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center text-slate-900 text-xs">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        Easy Tool Setup
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center text-slate-900 text-xs">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        Express Your Opinion & Knowledge
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center text-slate-900 text-xs">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        Flexible Monetization Options
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center text-slate-900 text-xs">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        Join a Thriving Community
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- UNLOCK YOUR POTENTIAL CTA BANNER -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="hero-pattern rounded-3xl p-8 sm:p-12 md:p-16 text-center text-white relative overflow-hidden shadow-2xl">
+            <!-- Decorative Floating Elements -->
+            <div class="absolute top-6 left-8 w-12 h-12 border-4 border-brand-lime rounded-full opacity-80 pointer-events-none"></div>
+            <div class="absolute bottom-6 right-8 text-brand-lime opacity-80 text-4xl pointer-events-none">
+                <i class="fa-solid fa-star"></i>
+            </div>
+
+            <div class="relative z-10 max-w-2xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+                    Unlock Your Potential as a Creator with ByteSpace
+                </h2>
+                <p class="text-blue-100 text-xs sm:text-sm leading-relaxed mb-8 opacity-90">
+                    Teach what you love, grow your student audience globally, and generate sustainable revenue with our easy-to-use creator platform.
+                </p>
+                <a href="#" class="inline-block bg-brand-lime hover:bg-brand-limeHover text-slate-900 font-extrabold text-sm px-8 py-3.5 rounded-full transition shadow-lg">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+                Discover What Our<br/>Community Is Saying
+            </h2>
+            <p class="text-slate-500 text-sm max-w-xl">Real reviews from students and creators who transformed their skills on ByteSpace.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Testimonial 1 -->
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-1 text-amber-400 text-xs mb-4">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed mb-6">
+                        "ByteSpace helped me transition into a full-time UI Designer within 4 months. The course structure and community support are top-notch!"
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 pt-4 border-t border-gray-50">
+                    <img class="w-10 h-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Reviewer">
+                    <div>
+                        <p class="text-xs font-bold text-slate-900">Sarah Jenkins</p>
+                        <p class="text-[10px] text-slate-400">UI/UX Designer</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-1 text-amber-400 text-xs mb-4">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed mb-6">
+                        "As an instructor, publishing on ByteSpace was smooth and hassle-free. The creator dashboard tools make tracking analytics effortless."
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 pt-4 border-t border-gray-50">
+                    <img class="w-10 h-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Reviewer">
+                    <div>
+                        <p class="text-xs font-bold text-slate-900">David Miller</p>
+                        <p class="text-[10px] text-slate-400">Software Instructor</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-1 text-amber-400 text-xs mb-4">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed mb-6">
+                        "The lifetime access model is incredible. I can learn at my own pace and revisit complex topics whenever I need them."
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 pt-4 border-t border-gray-50">
+                    <img class="w-10 h-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Reviewer">
+                    <div>
+                        <p class="text-xs font-bold text-slate-900">Alex Rivera</p>
+                        <p class="text-[10px] text-slate-400">Digital Marketer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- FOOTER -->
+        <bytespace-footer spaced></bytespace-footer>
+        <script src="components/site-footer.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found - ByteSpace</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1e40af',       /* Deep vibrant hero blue */
+                            heroBlue: '#1d42f3',   /* Exact vibrant royal blue background */
+                            lime: '#d3fe13',       /* Signature lime green accent */
+                            limeHover: '#c1eb07',
+                            dark: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Blueprint grid pattern background */
+        .bg-grid-pattern {
+            background-color: #1d42f3;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+            background-size: 72px 72px;
+        }
+
+        /* 404 Large Gradient Text Effect */
+        .text-404-gradient {
+            background: linear-gradient(180deg, #d3fe13 0%, rgba(211, 254, 19, 0.75) 55%, rgba(29, 66, 243, 0.05) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-lime selection:text-slate-900">
+
+    <div class="bg-grid-pattern text-white relative min-h-[680px] lg:min-h-[740px] flex flex-col justify-between border-b border-blue-500/20">
+        
+        <!-- Navigation Bar -->
+        <header class="w-full max-w-7xl mx-auto px-6 sm:px-8 pt-6 pb-4">
+            <nav class="flex items-center justify-between">
+                <!-- Brand Logo (Left) -->
+                <a href="#" class="flex items-center gap-2.5 group">
+                    <div class="w-8 h-8 rounded-lg bg-brand-lime flex items-center justify-center font-extrabold text-slate-950 text-xl tracking-tighter shadow-md group-hover:scale-105 transition-transform">
+                        b
+                    </div>
+                    <span class="text-2xl font-black tracking-tight text-white">ByteSpace</span>
+                </a>
+
+                <!-- Center Nav Links -->
+                <div class="hidden md:flex items-center gap-9 text-sm font-medium text-blue-100/90">
+                    <a href="/index.html" class="hover:text-white transition-colors">Home</a>
+                    <a href="/Course-Details.html" class="hover:text-white transition-colors">Courses</a>
+                    <a href="/ByteSpace – Creator Profile.html" class="hover:text-white transition-colors">Creators</a>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="flex items-center gap-5 text-sm font-medium">
+                    <a href="/bytespace_auth_pages.html" class="text-blue-100 hover:text-white transition-colors">Sign In</a>
+                    <a href="/bytespace_404_not_found_page.html" class="text-blue-100 hover:text-white transition-colors">Join Us</a>
+                    <button aria-label="Shopping Cart" class="w-9 h-9 rounded-xl border border-white/20 hover:border-white/40 bg-white/5 flex items-center justify-center text-white text-xs transition-all hover:bg-white/10">
+                        <i class="fa-solid fa-bag-shopping text-xs"></i>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main 404 Hero Content Area -->
+        <main class="w-full max-w-5xl mx-auto px-4 py-12 sm:py-16 text-center flex flex-col items-center justify-center my-auto">
+            <!-- Giant Gradient 404 Text -->
+            <h1 class="text-404-gradient text-[130px] sm:text-[180px] md:text-[220px] lg:text-[250px] font-black leading-none tracking-tight select-none -mb-4 sm:-mb-8 md:-mb-12">
+                404
+            </h1>
+
+            <!-- Heading & Subtitle -->
+            <h2 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4 max-w-3xl leading-snug sm:leading-tight">
+                The page you are looking for doesn't exist
+            </h2>
+            <p class="text-blue-100/80 text-xs sm:text-sm font-normal max-w-md mb-8">
+                Try to use a correct url or go back to homepage to start again
+            </p>
+
+            <!-- Call to Action Button -->
+            <a href="/index.html" class="bg-brand-lime hover:bg-brand-limeHover text-slate-950 font-bold text-xs sm:text-sm px-7 py-3.5 rounded-full transition-all shadow-lg hover:shadow-brand-lime/20 hover:-translate-y-0.5">
+                Back to Home
+            </a>
+        </main>
+
+        <!-- Bottom Spacer to maintain proper section balance -->
+        <div class="h-6"></div>
+    </div>
+
+    <!-- FOOTER -->
+<bytespace-footer spaced></bytespace-footer>
+<script src="components/site-footer.js"></script>
+    
+
+</body>
+</html>
