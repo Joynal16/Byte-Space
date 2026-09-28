@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteSpace - Authentication</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1f48e8',
+                            darkBlue: '#1638be',
+                            lime: '#d3f82d',
+                            limeHover: '#c0e620',
+                            cardBg: '#ffffff',
+                            inputBg: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .grid-pattern-bg {
+            background-color: #1f48e8;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            background-size: 56px 56px;
+        }
+
+        /* Wavy ribbon CSS illustration */
+        .wavy-ribbon {
+            width: 75px;
+            height: 45px;
+            background: repeating-linear-gradient(
+                135deg,
+                #ffffff,
+                #ffffff 8px,
+                transparent 8px,
+                transparent 16px
+            );
+            filter: drop-shadow(0px 8px 12px rgba(0,0,0,0.15));
+        }
+
+        /* 3D Ring SVG effect */
+        .ring-3d {
+            filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.2));
+        }
+
+        /* 3D Cone / Pyramid SVG effect */
+        .pyramid-3d {
+            filter: drop-shadow(0px 12px 20px rgba(0,0,0,0.25));
+        }
+
+        .cursor-pointer-none {
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="grid-pattern-bg font-sans antialiased text-slate-800 min-h-screen flex flex-col justify-between selection:bg-brand-lime selection:text-slate-900">
+
+    <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-6 md:py-10 flex-grow flex flex-col justify-between">
+
+        <!-- Top Navigation / Logo -->
+        <header class="flex items-center justify-between mb-8 md:mb-4">
+            <div class="flex items-center gap-2">
+                <!-- Logo Icon -->
+                <div class="w-9 h-9 rounded-xl bg-brand-lime flex items-center justify-center font-extrabold text-slate-900 text-2xl shadow-md cursor-pointer hover:scale-105 transition-transform">
+                    b
+                </div>
+            </div>
+
+            <!-- View Switcher Tabs (Demo Helper) -->
+            <div class="bg-blue-900/40 backdrop-blur-md p-1 rounded-full border border-white/20 flex items-center text-xs font-semibold text-white">
+                <button id="tabRegisterBtn" onclick="switchView('register')" class="px-4 py-1.5 rounded-full transition-all duration-300 bg-brand-lime text-slate-900 font-bold shadow">
+                    Register View
+                </button>
+                <button id="tabLoginBtn" onclick="switchView('login')" class="px-4 py-1.5 rounded-full transition-all duration-300 text-white/80 hover:text-white">
+                    Login View
+                </button>
+            </div>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center my-auto py-4">
+
+            <!-- LEFT COLUMN: Typography & Interactive Floating Collage Cards -->
+            <div class="lg:col-span-6 flex flex-col justify-center text-white">
+                
+                <!-- Dynamic Header Text (Changes on Register / Login) -->
+                <div class="mb-8 md:mb-12 max-w-md">
+                    <h1 id="leftHeaderTitle" class="text-3xl md:text-4xl font-extrabold tracking-tight mb-3 transition-all duration-300">
+                        Sign up and come in
+                    </h1>
+                    <p id="leftHeaderDesc" class="text-blue-100/90 text-sm md:text-base leading-relaxed font-normal transition-all duration-300">
+                        The registration process is straightforward, uncomplicated, and efficient, allowing users to sign up quickly, easily, and at no cost
+                    </p>
+                </div>
+
+                <div class="relative w-full max-w-[460px] h-[380px] mx-auto lg:mx-0 select-none">
+                    
+                    <!-- Pink Cursor Tag "Zihad" (Visible on Register view) -->
+                    <div id="zihadCursor" class="absolute -left-4 top-24 z-40 flex items-start gap-1 transition-all duration-500 hover:scale-110 cursor-pointer">
+                        <svg class="w-5 h-5 text-pink-500 fill-current drop-shadow" viewBox="0 0 24 24">
+                            <path d="M3 3l7 18 3-7 7-3L3 3z"/>
+                        </svg>
+                        <span class="bg-pink-500 text-white text-xs font-bold px-2.5 py-0.5 rounded-md shadow-lg">
+                            Zihad
+                        </span>
+                    </div>
+
+                    <!-- 3D Floating Shape 1: Yellow Torus / Ring (Top Left) -->
+                    <div class="absolute -top-6 left-12 z-30 ring-3d animate-bounce" style="animation-duration: 4s;">
+                        <svg width="76" height="76" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 15C30.67 15 15 30.67 15 50C15 69.33 30.67 85 50 85C69.33 85 85 69.33 85 50C85 30.67 69.33 15 50 15ZM50 65C41.7157 65 35 58.2843 35 50C35 41.7157 41.7157 35 50 35C58.2843 35 65 41.7157 65 50C65 58.2843 58.2843 65 50 65Z" fill="#d3f82d"/>
+                            <ellipse cx="50" cy="50" rx="35" ry="20" fill="#bfe621" transform="rotate(-30 50 50)"/>
+                            <ellipse cx="50" cy="50" rx="18" ry="9" fill="#1f48e8" transform="rotate(-30 50 50)"/>
+                        </svg>
+                    </div>
+
+                    <!-- BACK CARD: "Build Digital..." -->
+                    <div class="absolute left-2 top-16 w-[310px] bg-white text-slate-800 rounded-3xl p-4 shadow-2xl border border-white/40 transform -rotate-6 opacity-95 transition-transform duration-500 hover:rotate-0 z-10">
+                        <div class="relative aspect-[16/9] rounded-2xl overflow-hidden mb-3 bg-slate-100">
+                            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=500&q=80" alt="Build Digital" class="w-full h-full object-cover">
+                            <div class="absolute bottom-2 left-2 flex gap-1">
+                                <span class="bg-black/70 backdrop-blur-md text-[9px] text-white px-2 py-0.5 rounded-full">17 Lessons</span>
+                            </div>
+                        </div>
+                        <h4 class="font-bold text-sm text-slate-900 truncate">Build Digital Asset</h4>
+                        <p class="text-[10px] text-slate-400 mb-2">by purepearl studio</p>
+                        <div class="flex items-center justify-between text-[10px]">
+                            <span class="bg-slate-100 text-slate-600 font-semibold px-2 py-0.5 rounded"><i class="fa-solid fa-chart-simple text-[8px]"></i> Beginner</span>
+                            <div class="flex -space-x-1.5">
+                                <img class="w-4 h-4 rounded-full ring-1 ring-white" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="user">
+                                <img class="w-4 h-4 rounded-full ring-1 ring-white" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="user">
+                                <span class="w-4 h-4 rounded-full bg-black text-white text-[7px] font-bold flex items-center justify-center">+26k</span>
+                            </div>
+                        </div>
+                        <div class="mt-2 text-xs font-bold text-blue-600">$25<span class="text-[9px] font-normal text-slate-400">/lifetime</span></div>
+                    </div>
+
+                    <!-- MAIN FRONT CARD: "the Power of Big Data" -->
+                    <div class="absolute right-0 top-6 w-[330px] bg-white text-slate-800 rounded-3xl p-4 shadow-2xl border border-white/60 transform rotate-1 transition-transform duration-500 hover:-rotate-1 z-20">
+                        <!-- Thumbnail -->
+                        <div class="relative aspect-[16/9] rounded-2xl overflow-hidden mb-3 bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80" alt="Power of Big Data" class="w-full h-full object-cover">
+                            <!-- Overlay Badges -->
+                            <div class="absolute bottom-2 left-2 right-2 flex items-center gap-1 text-[9px] font-medium text-white">
+                                <span class="bg-black/70 backdrop-blur-md px-2 py-0.5 rounded-full">17 Lessons</span>
+                                <span class="bg-black/70 backdrop-blur-md px-2 py-0.5 rounded-full">2 hours 16 mins</span>
+                                <span class="bg-black/70 backdrop-blur-md px-2 py-0.5 rounded-full">59 Comments</span>
+                            </div>
+                        </div>
+
+                        <!-- Card Details -->
+                        <div class="flex items-center justify-between mb-0.5">
+                            <h3 class="font-extrabold text-slate-900 text-sm">the Power of Big Data</h3>
+                            <div class="flex items-center gap-1 text-xs font-bold text-slate-800">
+                                <span>4.5</span>
+                                <i class="fa-solid fa-star text-brand-lime text-[11px]"></i>
+                            </div>
+                        </div>
+                        <p class="text-[10px] text-blue-600 font-medium mb-3">by <span class="underline">purepearl studio</span></p>
+
+                        <!-- Level & Avatars -->
+                        <div class="flex items-center justify-between pt-1 border-t border-slate-100">
+                            <span class="inline-flex items-center gap-1 bg-slate-100 text-slate-700 text-[10px] font-semibold px-2.5 py-1 rounded-md">
+                                <i class="fa-solid fa-signal text-[8px]"></i> Beginner
+                            </span>
+                            <div class="flex items-center">
+                                <div class="flex -space-x-2 overflow-hidden">
+                                    <img class="inline-block h-5 w-5 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Student">
+                                    <img class="inline-block h-5 w-5 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Student">
+                                    <img class="inline-block h-5 w-5 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Student">
+                                </div>
+                                <span class="ml-1 bg-slate-900 text-white font-extrabold text-[8px] px-1.5 py-0.5 rounded-full">+26k</span>
+                            </div>
+                        </div>
+                        <div class="mt-2 text-xs font-bold text-brand-blue">$25 <span class="text-[9px] font-normal text-slate-400">/lifetime</span></div>
+                    </div>
+
+                    <!-- FLOATING CARD 3: "Happy Students" Badge Card (Bottom Green) -->
+                    <div class="absolute left-16 bottom-2 w-[220px] bg-brand-lime text-slate-900 rounded-2xl p-3 shadow-2xl z-30 transform -rotate-3 transition-transform duration-500 hover:rotate-0">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="font-bold text-xs text-slate-900">Happy Students</span>
+                        </div>
+                        <div class="flex items-center gap-1 text-[10px] font-bold text-slate-800 mb-2">
+                            <span>4.8</span>
+                            <span>(240)</span>
+                            <i class="fa-solid fa-star text-blue-600 text-[10px]"></i>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex -space-x-2 overflow-hidden">
+                                <img class="inline-block h-6 w-6 rounded-full ring-2 ring-brand-lime object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Student">
+                                <img class="inline-block h-6 w-6 rounded-full ring-2 ring-brand-lime object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Student">
+                                <img class="inline-block h-6 w-6 rounded-full ring-2 ring-brand-lime object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Student">
+                                <img class="inline-block h-6 w-6 rounded-full ring-2 ring-brand-lime object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Student">
+                            </div>
+                            <span class="bg-slate-900 text-white font-extrabold text-[9px] px-2 py-0.5 rounded-full">+2k</span>
+                        </div>
+                    </div>
+
+                    <!-- 3D Floating Shape 2: Yellow Pyramid / Cone (Bottom Left) -->
+                    <div class="absolute -bottom-4 left-0 z-40 pyramid-3d">
+                        <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 10 L85 75 L15 75 Z" fill="#d3f82d"/>
+                            <path d="M50 10 L85 75 L50 85 Z" fill="#bfe621"/>
+                            <path d="M50 10 L15 75 L50 85 Z" fill="#e2ff5e"/>
+                        </svg>
+                    </div>
+
+                    <!-- 3D Floating Shape 3: White Wavy Ribbon (Right Edge) -->
+                    <div class="absolute right-2 bottom-12 z-30 wavy-ribbon transform rotate-45 rounded-lg opacity-90"></div>
+
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Authentication Form Box -->
+            <div class="lg:col-span-6 flex justify-center lg:justify-end">
+                <div class="w-full max-w-[460px] bg-white rounded-[32px] p-8 md:p-10 shadow-2xl border border-white/20 transition-all duration-300">
+                    
+                    <!-- REGISTER FORM VIEW -->
+                    <div id="registerFormView" class="block">
+                        <!-- Header Title -->
+                        <div class="mb-6">
+                            <span class="text-xs font-semibold text-brand-blue tracking-wide">Create an Account</span>
+                            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+                                Welcome to ByteSpace
+                            </h2>
+                        </div>
+
+                        <!-- Form Inputs -->
+                        <form onsubmit="event.preventDefault();" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Full Name</label>
+                                <input type="text" placeholder="Jamie Davis" class="w-full bg-slate-50 border border-slate-200/80 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-brand-blue focus:bg-white transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Email</label>
+                                <input type="email" placeholder="designer@example.com" class="w-full bg-slate-50 border border-slate-200/80 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-brand-blue focus:bg-white transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Password</label>
+                                <input type="password" placeholder="********" class="w-full bg-slate-50 border border-slate-200/80 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-brand-blue focus:bg-white transition">
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="pt-2 flex justify-end">
+                                <button type="submit" class="bg-brand-lime hover:bg-brand-limeHover text-slate-900 font-bold text-xs px-8 py-3 rounded-full transition-all duration-200 shadow-sm active:scale-95">
+                                    Continue
+                                </button>
+                            </div>
+                        </form>
+
+                        <!-- Footer Link Switch -->
+                        <div class="mt-12 text-center text-xs text-slate-500 font-medium">
+                            Already have an account? 
+                            <button onclick="switchView('login')" class="text-brand-blue font-bold hover:underline ml-0.5">Login</button>
+                        </div>
+                    </div>
+
+                    <!-- LOGIN FORM VIEW (Hidden by default, shown on toggle) -->
+                    <div id="loginFormView" class="hidden">
+                        <!-- Header Title -->
+                        <div class="mb-6">
+                            <span class="text-xs font-semibold text-brand-blue tracking-wide">Sign In</span>
+                            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+                                Welcome Back
+                            </h2>
+                        </div>
+
+                        <!-- Form Inputs -->
+                        <form onsubmit="event.preventDefault();" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Email</label>
+                                <input type="email" placeholder="designer@example.com" class="w-full bg-slate-50 border border-slate-200/80 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-brand-blue focus:bg-white transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Password</label>
+                                <input type="password" placeholder="********" class="w-full bg-slate-50 border border-slate-200/80 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-brand-blue focus:bg-white transition">
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="pt-2 flex justify-end">
+                                <button type="submit" class="bg-brand-lime hover:bg-brand-limeHover text-slate-900 font-bold text-xs px-8 py-3 rounded-full transition-all duration-200 shadow-sm active:scale-95">
+                                    Sign In
+                                </button>
+                            </div>
+                        </form>
+
+                        <!-- Divider "or" -->
+                        <div class="relative my-8 text-center">
+                            <div class="absolute inset-0 flex items-center">
+                                <div class="w-full border-t border-slate-100"></div>
+                            </div>
+                            <span class="relative bg-white px-3 text-xs text-slate-400 font-medium">or</span>
+                        </div>
+
+                        <!-- Social Buttons -->
+                        <div class="flex items-center justify-center gap-4 mb-8">
+                            <button class="w-12 h-12 rounded-full border border-slate-200 hover:border-slate-300 flex items-center justify-center text-slate-800 hover:bg-slate-50 transition shadow-sm">
+                                <i class="fa-brands fa-facebook-f text-base text-slate-900"></i>
+                            </button>
+                            <button class="w-12 h-12 rounded-full border border-slate-200 hover:border-slate-300 flex items-center justify-center text-slate-800 hover:bg-slate-50 transition shadow-sm">
+                                <i class="fa-brands fa-google text-base text-slate-900"></i>
+                            </button>
+                        </div>
+
+                        <!-- Footer Link Switch -->
+                        <div class="text-center text-xs text-slate-500 font-medium">
+                            New user? 
+                            <button onclick="switchView('register')" class="text-brand-blue font-bold hover:underline ml-0.5">Create an account</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer Notice -->
+        <footer class="mt-8 text-center text-xs text-blue-200/60">
+            © 2026 ByteSpace. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        function switchView(view) {
+            const registerForm = document.getElementById('registerFormView');
+            const loginForm = document.getElementById('loginFormView');
+            const tabRegisterBtn = document.getElementById('tabRegisterBtn');
+            const tabLoginBtn = document.getElementById('tabLoginBtn');
+            const leftHeaderTitle = document.getElementById('leftHeaderTitle');
+            const leftHeaderDesc = document.getElementById('leftHeaderDesc');
+            const zihadCursor = document.getElementById('zihadCursor');
+
+            if (view === 'login') {
+                // Show Login Form
+                registerForm.classList.add('hidden');
+                registerForm.classList.remove('block');
+                loginForm.classList.remove('hidden');
+                loginForm.classList.add('block');
+
+                // Update Header Text
+                leftHeaderTitle.textContent = "Sign in with ease";
+                leftHeaderDesc.textContent = "Experience a seamless and efficient sign-in process that grants you instant access to a world of knowledge.";
+
+                // Update Cursor Tag Visibility
+                zihadCursor.classList.add('opacity-0', 'pointer-events-none');
+
+                // Update Top Switcher Buttons
+                tabLoginBtn.className = "px-4 py-1.5 rounded-full transition-all duration-300 bg-brand-lime text-slate-900 font-bold shadow";
+                tabRegisterBtn.className = "px-4 py-1.5 rounded-full transition-all duration-300 text-white/80 hover:text-white";
+            } else {
+                // Show Register Form
+                loginForm.classList.add('hidden');
+                loginForm.classList.remove('block');
+                registerForm.classList.remove('hidden');
+                registerForm.classList.add('block');
+
+                // Update Header Text
+                leftHeaderTitle.textContent = "Sign up and come in";
+                leftHeaderDesc.textContent = "The registration process is straightforward, uncomplicated, and efficient, allowing users to sign up quickly, easily, and at no cost";
+
+                // Update Cursor Tag Visibility
+                zihadCursor.classList.remove('opacity-0', 'pointer-events-none');
+
+                // Update Top Switcher Buttons
+                tabRegisterBtn.className = "px-4 py-1.5 rounded-full transition-all duration-300 bg-brand-lime text-slate-900 font-bold shadow";
+                tabLoginBtn.className = "px-4 py-1.5 rounded-full transition-all duration-300 text-white/80 hover:text-white";
+            }
+        }
+    </script>
+</body>
+</html>
